@@ -7,10 +7,10 @@
 // The values for the make and model will come from two parameters, make and model (in that order). 
 
 // Code here
-
-
-
-
+function CarFactory(make, model){
+  this.make= make;
+  this.model=model;
+}
 
 // ======================
 // Problem 2
@@ -26,12 +26,7 @@ function Employee(name, email, hireDate) {
 }
 
 // Code here
-
-
-
-
-
-
+var bob = new Employee('Bob','bob@gmail.com','01-02-98');
 
 
 // ======================
@@ -41,11 +36,20 @@ function Employee(name, email, hireDate) {
 // Write a constructor function, including method definitions, which will make the following function invocations function properly.
 
 // Code here
-
+function Car(make, model, year){
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.move = 0;
+}
 
 
 
   //Function Invocations Here
+  Car.prototype.moveCar = function(){
+    this.move += 10;
+    return this.move;
+  }
 
   var prius = new Car('Toyota', 'Prius', 2011);
   var mustang = new Car('Ford', 'Mustang', 2013);
